@@ -1,5 +1,4 @@
 import notesDB from "../db/notesDB.js";
-import usersDB from "../db/usersDB.js";
 
 export async function deleteNotes(id, username) {
     try {
@@ -14,14 +13,5 @@ export async function deleteNotes(id, username) {
     catch {
         console.error(error);
 
-    }
-}
-
-export async function add(user) {
-    try {
-        usersDB.push(user)
-        return { msg: "success" }
-    } catch (err) {
-        return { err: err.nessage }
     }
 }
