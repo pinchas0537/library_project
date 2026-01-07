@@ -47,3 +47,17 @@ export function add(note = {}) {
         console.error(error)
     }
 }
+
+export async function existsNote(id) {
+    try {
+        const search = false
+        for (let i = 0; i < usersDB.length; i++) {
+            if (notesDB[i].id === id) {
+                search = true
+            }
+        }
+        return search
+    } catch {
+        console.error(error)
+    }
+}
