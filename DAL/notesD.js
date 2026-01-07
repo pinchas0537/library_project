@@ -1,5 +1,5 @@
-import notesDB from "../db/notesDB.js";
 
+import notesDB from "../db/notesDB.js"
 export async function deleteNotes(id, username) {
     try {
         for (let i = 0; i < notesDB.length; i++) {
@@ -10,8 +10,16 @@ export async function deleteNotes(id, username) {
         }
         return notesDB
     }
-    catch {
+    catch (error) {
         console.error(error);
+    }
+}
 
+export function add(note = {}) {
+    try {
+        notesDB.push(note)
+        return true
+    } catch (error) {
+        console.error(error)
     }
 }
