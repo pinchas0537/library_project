@@ -8,7 +8,7 @@ test.describe("Testing user functions in the service folder (success)", () => {
     test("Testing the register function", (() => {
         assert.deepStrictEqual(register("test1", "passTest1"), true)
     }))
-    // test("Testing the login function", (() => {
-    //     assert.deepStrictEqual(login("test1", "passTest1"), userT)
-    // }))
+    test("Testing the login function", (() => {
+        assert.deepStrictEqual(login("test1", "passTest1"), userT)
+    }))
 })
