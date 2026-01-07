@@ -9,6 +9,7 @@ export function listNotes(ownerUsername) {
             return listNotes_by_username
         } else {
             console.log("The ownerUsername not string.")
+            return false
         }
     } catch { error } {
         console.error(error)

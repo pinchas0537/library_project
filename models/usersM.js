@@ -18,9 +18,9 @@ export class Users {
             createdAt: this.createdAt
         }
     }
-    genarateNote(arr = 2) {
-        for (let i = 0; i < arr.length; i++) {
-            const element = new Note (this.username, `Example: ${i + 1}`)
+    genarateNote(num = 2) {
+        for (let i = 0; i < num; i++) {
+            const element = new Note (this.username, `Example: `)
             this.notes.push(element)
         }
     }

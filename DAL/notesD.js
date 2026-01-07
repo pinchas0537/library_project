@@ -1,9 +1,9 @@
 import notesDB from "../db/notesDB.js"
 
-export function deleteNotes(id, username) {
+export function deleteNotes(username, id) {
     try {
         for (let i = 0; i < notesDB.length; i++) {
-            if (notesDB[i].id === id && notesDB[i].username === username) {
+            if (notesDB[i].id === id && notesDB[i].ownerUsername === username) {
                 notesDB.splice(i, 1)
                 console.log("Deleted successfully")
             }
@@ -16,8 +16,8 @@ export function deleteNotes(id, username) {
 
 export function listByOwner(username) {
     try {
-        const ListOfNotes = notesDB.forEach(element => {
-            element.username === username;
+        const ListOfNotes = notesDB.filter(element => {
+            return element.ownerUsername === username;
         });
         return ListOfNotes;
     } catch (error) {
@@ -49,9 +49,9 @@ export function add(note = {}) {
 }
 
 export function existsNote(id) {
+    let search = false
     try {
-        const search = false
-        for (let i = 0; i < usersDB.length; i++) {
+        for (let i = 0; i < notesDB.length; i++) {
             if (notesDB[i].id === id) {
                 search = true
             }

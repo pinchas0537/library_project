@@ -3,11 +3,12 @@ import usersDB from "../db/usersDB.js";
 import { Users } from "../models/usersM.js";
 
 export function login(username, password) {
+    let user = undefined
     try {
-        const user = usersDB.find((elemnt) => {
-            elemnt.username === username && elemnt.password === password;
+        user = usersDB.find((elemnt) => {
+            return elemnt.username === username && elemnt.password === password;
         })
-        if (user)
+        if (user !== undefined)
             return user
         return { err: "not found" }
     } catch (err) {
