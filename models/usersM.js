@@ -1,4 +1,5 @@
 import { nanoid } from "nanoid"
+import { Note } from "./notesM"
 
 export class Users {
     constructor(username, password) {
@@ -19,7 +20,7 @@ export class Users {
     }
     genarateNote(arr = 2) {
         for (let i = 0; i < arr.length; i++) {
-            const element = new Note(this.username, `Example: ${i + 1}`)
+            const element = new Note (this.username, `Example: ${i + 1}`)
             this.notes.push(element)
         }
     }
