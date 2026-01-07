@@ -7,9 +7,9 @@ export function login(username, password) {
         const user = usersDB.find((elemnt) => {
             elemnt.username === username && elemnt.password === password;
         })
-        if (user === undefined)
-            return {err:"no found"}
-        return user
+        if (user)
+            return user
+        return { err: "not found" }
     } catch (err) {
         return { err: err.message }
     }
