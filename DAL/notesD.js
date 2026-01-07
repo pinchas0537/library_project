@@ -9,23 +9,21 @@ export async function deleteNotes(id, username) {
             }
         }
         return notesDB
+    }catch(error){
+        console.error(error)
     }
 
     }
-}
 
-export async function listByOwner(username) {
+
+export async function listByOwner(username){
     try {
         const ListOfNotes = notesDB.forEach(element => {
             element.username === username;
         });
         return ListOfNotes;
     } catch (err) {
-        return a.message;
-    catch (error) {
-        console.error(error);
-    }
-}
+        return a.message;}}
 
 export async function listNotes(ownerUsername){
     try{
@@ -47,32 +45,4 @@ export function add(note = {}) {
     }
 }
 
-// export async function existsUser(username) {
-//     try{
-//         var search=false
-//         for(let i=0;i<usersDB.length;i++){
-//             if(usersDB[i].username===username){
-//                 search=true
-//             }
-//         }
-//         return search
-//     }catch{
-//         console.error(error)
-//     }
-// }
 
-// export async function findhByUsername(username){
-//     try{
-//         var search_user=true
-//         for(let i=0;i<usersDB.length;i++){
-//             if(usersDB[i].username===username){
-//                 search_user=usersDB[i]
-//                 }}
-//         if(search_user===true){
-//             console.log("User not found")}
-//             else{
-//                 console.log(search_user)
-//             }}catch{
-//         console.error(error)
-//     }
-// }
