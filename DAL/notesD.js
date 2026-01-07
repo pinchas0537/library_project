@@ -1,6 +1,6 @@
 import notesDB from "../db/notesDB.js"
 
-export async function deleteNotes(id, username) {
+export function deleteNotes(id, username) {
     try {
         for (let i = 0; i < notesDB.length; i++) {
             if (notesDB[i].id === id && notesDB[i].username === username) {
