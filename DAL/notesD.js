@@ -25,17 +25,6 @@ export async function listByOwner(username){
     } catch (err) {
         return a.message;}}
 
-export async function listNotes(ownerUsername){
-    try{
-        if(typeof(ownerUsername)===String){
-        return ownerUsername
-    }else{
-        console.log("The ownerUsername not string.")
-    }}catch{error}{
-        console.error(error)
-    }
-}
-
 export function add(note = {}) {
     try {
         notesDB.push(note)
