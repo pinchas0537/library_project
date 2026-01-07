@@ -22,5 +22,6 @@ export function register(username, password) {
     if (exist === true) return false
     const user = new Users(username, password)
     const addUser = add(user)
-    return true
+    if (addUser.msg === "success") return true
+    else return addUser
 }

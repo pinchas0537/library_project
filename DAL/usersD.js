@@ -4,8 +4,8 @@ export function add(user) {
     try {
         usersDB.push(user)
         return { msg: "success" }
-    } catch (err) {
-        return { err: err.nessage }
+    } catch (error) {
+        return { error }
     }
 }
 
