@@ -1,6 +1,6 @@
 import usersDB from "../db/usersDB.js";
 
-export async function add(user) {
+export function add(user) {
     try {
         usersDB.push(user)
         return { msg: "success" }
@@ -9,7 +9,7 @@ export async function add(user) {
     }
 }
 
-export async function existsUser(username) {
+export function existsUser(username) {
     try {
         var search = false
         for (let i = 0; i < usersDB.length; i++) {
@@ -23,7 +23,7 @@ export async function existsUser(username) {
     }
 }
 
-export async function findhByUsername(username) {
+export function findhByUsername(username) {
     try {
         var search_user = true
         for (let i = 0; i < usersDB.length; i++) {

@@ -1,6 +1,6 @@
 import notesDB from "../db/notesDB.js"
 
-export async function deleteNotes(id, username) {
+export function deleteNotes(id, username) {
     try {
         for (let i = 0; i < notesDB.length; i++) {
             if (notesDB[i].id === id && notesDB[i].username === username) {
@@ -14,7 +14,7 @@ export async function deleteNotes(id, username) {
     }
 }
 
-export async function listByOwner(username) {
+export function listByOwner(username) {
     try {
         const ListOfNotes = notesDB.forEach(element => {
             element.username === username;
@@ -27,7 +27,7 @@ export async function listByOwner(username) {
 
 
 
-export async function listNotes(ownerUsername) {
+export function listNotes(ownerUsername) {
     try {
         if (typeof (ownerUsername) === String) {
             return ownerUsername
@@ -48,7 +48,7 @@ export function add(note = {}) {
     }
 }
 
-export async function existsNote(id) {
+export function existsNote(id) {
     try {
         const search = false
         for (let i = 0; i < usersDB.length; i++) {
