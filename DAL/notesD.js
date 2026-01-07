@@ -12,6 +12,7 @@ export async function deleteNotes(id, username) {
     } catch (error) {
         console.error(error)
     }
+}
 
 export async function listByOwner(username) {
     try {
